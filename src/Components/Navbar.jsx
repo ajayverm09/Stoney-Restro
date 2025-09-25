@@ -16,7 +16,6 @@ const Navbar = () => {
     { name: 'About Us', path: '/about', icon: <FaInfoCircle className="text-lg" /> },
     { name: 'Blogs', path: '/blogs', icon: <FaBlog className="text-lg" /> },
     { name: 'Contact Us', path: '/contact', icon: <FaEnvelope className="text-lg" /> },
-    { name: 'Service', path: '/service', icon: <FaEnvelope className="text-lg" /> },
 
   ];
 

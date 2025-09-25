@@ -7,7 +7,6 @@ import About from './Pages/About'
 import Blogs from './Pages/Blogs'
 import SingleBlog from './Pages/SingleBlog'
 import Contact from './Pages/Contact'
-import ServicePage from './Pages/ServicePage'
 function App() {
 
   return (
@@ -21,7 +20,6 @@ function App() {
           <Route path='/blogs' element={<Blogs/>}/>
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/blog/:id' element={<SingleBlog/>}/>
-          <Route path='/service' element={<ServicePage/>}/>
         </Routes>
         </BrowserRouter>
         <Footer/>
