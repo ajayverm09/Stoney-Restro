@@ -7,12 +7,14 @@ import About from './Pages/About'
 import Blogs from './Pages/Blogs'
 import SingleBlog from './Pages/SingleBlog'
 import Contact from './Pages/Contact'
+import ScrollToTop from './Components/ScrollToTop'
 function App() {
 
   return (
     <>
       <div className='overflow-x-hidden'>
         <BrowserRouter>
+        <ScrollToTop/>
         <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
