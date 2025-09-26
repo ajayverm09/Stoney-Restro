@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
   // Animation variants
@@ -54,20 +53,20 @@ const Footer = () => {
       <div className="container mx-auto py-16 px-4 w-full">
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6">
           {/* Logo Section */}
+          <a href='/'>
           <motion.div 
             className="flex flex-col items-start justify-center"
             variants={itemVariants}
           >
-            <Link to="/">
-              <motion.img 
-                src="https://stoneyriver.com/wp-content/themes/bluestrap-child/assets/images/white-logo.png" 
-                alt="Stoney River Steakhouse and Grill" 
-                className="h-auto w-48 md:w-64 lg:w-96 cursor-pointer"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              />
-            </Link>
+            <motion.img 
+              src="https://stoneyriver.com/wp-content/themes/bluestrap-child/assets/images/white-logo.png" 
+              alt="Stoney River Steakhouse and Grill" 
+              className="h-auto w-48 md:w-64 lg:w-96"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            />
           </motion.div>
+          </a>
 
           {/* Restaurant Services */}
           <motion.div variants={itemVariants}>
