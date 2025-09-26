@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaLinkedinIn, FaTwitter, FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   // Animation variants
@@ -27,7 +26,7 @@ const Footer = () => {
   const linkVariants = {
     hover: {
       x: 5,
-      color: "#B9A38F",
+      color: "#ffffff",
       transition: { duration: 0.2 }
     }
   };
@@ -35,7 +34,7 @@ const Footer = () => {
   const socialVariants = {
     hover: {
       scale: 1.2,
-      color: "#B9A38F",
+      color: "#ffffff",
       transition: { duration: 0.2 }
     },
     tap: {
@@ -45,91 +44,49 @@ const Footer = () => {
 
   return (
     <motion.footer 
-      className="bg-[#363544] text-gray-300 font-sans tracking-wide w-full"
+      className="bg-[url('https://stoneyriver.com/wp-content/themes/bluestrap-child/assets/images/darkgrey-pattern.png')] text-gray-400 font-sans tracking-wide w-full"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
       {/* Main Footer Section */}
       <div className="container mx-auto py-16 px-4 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo and About Section */}
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6">
+          {/* Logo Section */}
+          <a href='/'>
           <motion.div 
             className="flex flex-col items-start justify-center"
             variants={itemVariants}
           >
-            <motion.div 
-              className="mb-4"
+            <motion.img 
+              src="https://stoneyriver.com/wp-content/themes/bluestrap-child/assets/images/white-logo.png" 
+              alt="Stoney River Steakhouse and Grill" 
+              className="h-auto w-48 md:w-64 lg:w-96"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-            >
-              <div className="text-white text-2xl font-serif font-bold">N.K. Verma & Associates</div>
-              <div className="w-16 h-1 bg-[#B9A38F] mt-2"></div>
-            </motion.div>
-            <motion.p 
-              className="text-sm mb-4"
-              variants={itemVariants}
-            >
-              Providing exceptional legal services with integrity and professionalism for over 25 years.
-            </motion.p>
-            <motion.div 
-              className="flex space-x-3 mt-2"
-              variants={itemVariants}
-            >
-              <motion.a 
-                href="#" 
-                aria-label="LinkedIn"
-                variants={socialVariants}
-                whileHover="hover"
-                whileTap="tap"
-                className="bg-[#2a2933] p-2 rounded-full"
-              >
-                <FaLinkedinIn className="text-white" />
-              </motion.a>
-              <motion.a 
-                href="#" 
-                aria-label="Twitter"
-                variants={socialVariants}
-                whileHover="hover"
-                whileTap="tap"
-                className="bg-[#2a2933] p-2 rounded-full"
-              >
-                <FaTwitter className="text-white" />
-              </motion.a>
-              <motion.a 
-                href="#" 
-                aria-label="Facebook"
-                variants={socialVariants}
-                whileHover="hover"
-                whileTap="tap"
-                className="bg-[#2a2933] p-2 rounded-full"
-              >
-                <FaFacebookF className="text-white" />
-              </motion.a>
-            </motion.div>
+            />
           </motion.div>
+          </a>
 
-          {/* Practice Areas */}
+          {/* Restaurant Services */}
           <motion.div variants={itemVariants}>
             <motion.h3 
               className="text-lg font-bold text-white mb-4 uppercase"
               variants={itemVariants}
             >
-              Practice Areas
+              RESTAURANT SERVICES
             </motion.h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4 text-lg">
               {[
-                "Corporate Law", 
-                "Family Law", 
-                "Property Law", 
-                "Contract Law",
-                "Intellectual Property",
-                "Dispute Resolution"
+                "RESERVATIONS", 
+                "ORDER ONLINE", 
+                "MENUS AND LOCATIONS", 
+                "PRIVATE DINING"
               ].map((item, index) => (
                 <motion.li key={index} variants={itemVariants}>
                   <motion.a 
                     href="#" 
-                    className="hover:text-[#B9A38F] transition-colors text-sm"
+                    className="hover:text-white transition-colors"
                     variants={linkVariants}
                     whileHover="hover"
                   >
@@ -140,27 +97,25 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Quick Links */}
+          {/* About Stoney River */}
           <motion.div variants={itemVariants}>
             <motion.h3 
               className="text-lg font-bold text-white mb-4 uppercase"
               variants={itemVariants}
             >
-              Quick Links
+              ABOUT STONEY RIVER
             </motion.h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4 text-lg">
               {[
-                { text: "About Us", href: "/about" },
-                { text: "Our Team", href: "/team" },
-                { text: "Blog", href: "/blogs" },
-                { text: "Careers", href: "#" },
-                { text: "Contact Us", href: "/contact" },
-                { text: "Book Consultation", href: "/book-consultation" }
+                { text: "ABOUT US", href: "/about" },
+                { text: "CAREERS", href: "#" },
+                { text: "NEWS", href: "/blogs" },
+                { text: "DINING GUIDELINES", href: "#" }
               ].map((item, index) => (
                 <motion.li key={index} variants={itemVariants}>
                   <motion.a 
                     href={item.href} 
-                    className="hover:text-[#B9A38F] transition-colors text-sm"
+                    className="hover:text-white transition-colors"
                     variants={linkVariants}
                     whileHover="hover"
                   >
@@ -171,52 +126,57 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Contact Information */}
+          {/* Customer Service */}
           <motion.div variants={itemVariants}>
             <motion.h3 
               className="text-lg font-bold text-white mb-4 uppercase"
               variants={itemVariants}
             >
-              Contact Us
+              CUSTOMER SERVICE
             </motion.h3>
-            <ul className="space-y-4">
-              <motion.li variants={itemVariants} className="flex items-start">
-                <FaMapMarkerAlt className="text-[#B9A38F] mt-1 mr-3" />
-                <span className="text-sm">123 Legal District, Suite 500<br />New Delhi, India 110001</span>
-              </motion.li>
-              <motion.li variants={itemVariants} className="flex items-center">
-                <FaPhone className="text-[#B9A38F] mr-3" />
-                <span className="text-sm">+91 11 2345 6789</span>
-              </motion.li>
-              <motion.li variants={itemVariants} className="flex items-center">
-                <FaEnvelope className="text-[#B9A38F] mr-3" />
-                <span className="text-sm">info@nkverma.com</span>
-              </motion.li>
+            <ul className="space-y-4 text-lg">
+              {[
+                { text: "CONTACT US", href: "/contact" },
+                { text: "FIND A STONEY RIVER", href: "#" },
+                { text: "GIFT CARDS", href: "#" },
+                { text: "SITEMAP", href: "#" }
+              ].map((item, index) => (
+                <motion.li key={index} variants={itemVariants}>
+                  <motion.a 
+                    href={item.href} 
+                    className="hover:text-white transition-colors"
+                    variants={linkVariants}
+                    whileHover="hover"
+                  >
+                    {item.text}
+                  </motion.a>
+                </motion.li>
+              ))}
             </ul>
-            
-            <motion.div 
-              className="mt-6"
-              variants={itemVariants}
-            >
-              <motion.a 
-                href="/book-consultation" 
-                className="inline-block px-4 py-2 bg-[#B9A38F] text-[#363544] font-medium rounded-lg hover:bg-opacity-90 transition-all duration-300 text-sm"
-                whileHover={{ 
-                  scale: 1.05,
-                  backgroundColor: "#B9A38F"
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                Book Consultation
-              </motion.a>
-            </motion.div>
           </motion.div>
         </div>
+        
+        <motion.div 
+          className="mt-12 text-right"
+          variants={itemVariants}
+        >
+          <motion.a 
+            href="#" 
+            className="text-[#D4C0A2] hover:text-white transition-colors text-lg md:text-xl uppercase inline-block"
+            whileHover={{ 
+              scale: 1.05,
+              color: "#ffffff"
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            VISIT OUR <span className='text-[#99815B] underline font-bold'>J.ALEXANDER</span> RESTAURANTS
+          </motion.a>
+        </motion.div>
       </div>
 
       {/* Bottom Footer Section */}
       <motion.div 
-        className="bg-[#2a2933] py-6 w-full"
+        className="bg-[#2a2a2a] py-6 w-full"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.5 }}
@@ -228,24 +188,24 @@ const Footer = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            © {new Date().getFullYear()} N.K. Verma & Associates. All Rights Reserved.
+            © 2025 STONEY RIVER. ALL RIGHTS RESERVED
           </motion.p>
           
           <motion.div 
-            className="flex items-center text-xs md:text-sm mt-4 md:mt-0 space-x-4 md:space-x-6"
+            className="flex items-center text-xs md:text-sm mt-4 md:mt-0 space-x-4 md:space-x-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
           >
             {[
-              "Terms of Use", 
-              "Privacy Policy", 
-              "Disclaimer"
+              "TERMS OF USE", 
+              "PRIVACY POLICY", 
+              "ALLERGEN INFORMATION"
             ].map((item, index) => (
               <React.Fragment key={index}>
                 <motion.a 
                   href="#" 
-                  className="hover:text-[#B9A38F] transition-colors"
+                  className="hover:text-white transition-colors"
                   variants={linkVariants}
                   whileHover="hover"
                 >
@@ -254,6 +214,32 @@ const Footer = () => {
                 {index < 2 && <span className="text-gray-600">|</span>}
               </React.Fragment>
             ))}
+          </motion.div>
+          
+          <motion.div 
+            className="flex items-center mt-4 md:mt-0 space-x-4 text-white"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+          >
+            <motion.a 
+              href="#" 
+              aria-label="Instagram"
+              variants={socialVariants}
+              whileHover="hover"
+              whileTap="tap"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </motion.a>
+            <motion.a 
+              href="#" 
+              aria-label="Facebook"
+              variants={socialVariants}
+              whileHover="hover"
+              whileTap="tap"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </motion.a>
           </motion.div>
         </div>
       </motion.div>
